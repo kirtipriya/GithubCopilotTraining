@@ -16,7 +16,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.http.get<Post[]>('/api/posts').subscribe({
-            next: data => { this.posts = data; this.loading = false },
+            //bug 1 :posts empty
+            //next: data => { this.posts = data; this.loading = false },
+            next: data => { this.posts = []; this.loading = false },
             error: err => { this.error = err.message || 'Failed to load'; this.loading = false }
         });
     }
