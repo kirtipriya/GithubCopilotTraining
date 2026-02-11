@@ -1,0 +1,9 @@
+<div>
+    <h1>Posts</h1>
+    <div *ngIf="loading">Loading…</div>
+    <div *ngIf="error">Error: {{ error }}</div>
+    <div *ngFor="let p of posts" class="post">
+        <h3>{{p.title}}</h3>
+        <div>{{p.description}}</div>
+    </div>
+</div>
